@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sphinx
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        role: sphinx
+        name: sphinx
+    spec:
+      containers:
+      - image: 539277938309.dkr.ecr.us-west-2.amazonaws.com/sphinx:latest
+        name: sphinx
+        ports:
+        - containerPort: 3000
